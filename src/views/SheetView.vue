@@ -58,10 +58,9 @@ function getRowColor(i) {
                 <thead class="bg-gray-100">
                     <tr>
                         <th v-for="(col, i) in rows[0]" :key="i"
-                            class="text-sm px-4 py-2 border-b text-left font-bold text-white whitespace-nowrap bg-gray-700 sticky top-0 z-20"
+                            class="text-xs px-4 py-2 border-b text-left font-bold text-white whitespace-nowrap bg-gray-700 sticky top-0 z-20"
                             :class="{
-                                'sticky left-0 z-30': i === 0,
-                                'sticky left-34 z-30': i === 1
+                                'sticky left-0 z-30': i === 0
                             }">
                             {{ col }}
                         </th>
@@ -70,12 +69,11 @@ function getRowColor(i) {
 
                 <tbody>
                     <tr v-for="(row, index) in rows.slice(1)" :key="index" :class="[
-                        'transition-colors duration-150 text-sm text-center',
+                        'transition-colors duration-150 text-xs text-center',
                         getRowColor(index)
                     ]">
                         <td v-for="(col, j) in row" :key="j" class="px-4 py-2 border-b text-gray-800" :class="{
                             'font-bold sticky left-0 z-10 bg-white text-right': j === 0,
-                            'font-bold sticky left-34 z-10 bg-white': j === 1,
                             'font-bold': j >= row.length - 3
                         }">
                             {{ col }}
