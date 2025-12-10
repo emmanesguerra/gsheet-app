@@ -21,6 +21,7 @@ onMounted(async () => {
         "https://script.google.com/macros/s/AKfycbwJ0snCnWQ_jfmb8HIgQnKLnExDZHmbsSponauhAcevgjthMDUZBdLowwKBymOlLd4L/exec?callback=sheetCallback";
 
     const data = await loadJSONP(url, "sheetCallback");
+    console.log(data);
     rows.value = data.rows;
     loading.value = false;
 });
