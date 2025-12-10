@@ -47,6 +47,12 @@ function getRowColor(i) {
 
     return ''; // default
 }
+
+function truncateFirstCol(value) {
+  if (!value) return '';
+  if (value.length <= 6) return value; // 5 or fewer characters → no truncation
+  return value.slice(0, 3) + '...' + value.slice(-2);
+}
 </script>
 
 <template>
@@ -76,7 +82,7 @@ function getRowColor(i) {
                             'font-bold sticky left-0 z-10 bg-white text-right': j === 0,
                             'font-bold': j >= row.length - 3
                         }">
-                            {{ col }}
+                            {{ j === 0 ? truncateFirstCol(col) : col }}
                         </td>
                     </tr>
                 </tbody>
