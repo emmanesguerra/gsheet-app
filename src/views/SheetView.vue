@@ -28,19 +28,20 @@ onMounted(async () => {
 
 function getRowColor(i) {
     // Define your row groups: 4, 2, 3, 2, 3, 6
-    const groups = [4, 2, 3, 2, 3, 6];
+    const groups = [4, 1, 2, 3, 3, 3, 6];
     let sum = 0;
 
     for (let g = 0; g < groups.length; g++) {
         sum += groups[g];
         if (i < sum) {
             switch (g) {
-                case 0: return 'bg-red-100';
-                case 1: return 'bg-yellow-100';
-                case 2: return 'bg-green-100';
-                case 3: return 'bg-blue-100';
-                case 4: return 'bg-purple-100';
-                case 5: return 'bg-pink-100';
+                case 0: return 'bg-red-200';
+                case 1: return 'bg-violet-200';
+                case 2: return 'bg-yellow-200';
+                case 3: return 'bg-green-200';
+                case 4: return 'bg-blue-200';
+                case 5: return 'bg-purple-200';
+                case 6: return 'bg-pink-200';
             }
         }
     }
